@@ -483,6 +483,9 @@ extractLpLocalFields(NETPKT& netPacket, const lp::Packet& lpPacket)
   if (lpPacket.has<lp::IncomingFaceIdField>()) {
     netPacket.setTag(make_shared<lp::IncomingFaceIdTag>(lpPacket.get<lp::IncomingFaceIdField>()));
   }
+  if (lpPacket.has<lp::NumHopsField>()) {
+    netPacket.setTag(make_shared<lp::NumHopsTag>(lpPacket.get<lp::NumHopsField>()));
+  }
 }
 
 void

@@ -40,7 +40,8 @@ enum {
   NextHopFaceId = 816,
   CachePolicy = 820,
   CachePolicyType = 821,
-  IncomingFaceId = 817
+  IncomingFaceId = 817,
+  NumHops = 832
 };
 
 enum {

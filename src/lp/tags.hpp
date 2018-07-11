@@ -49,6 +49,8 @@ typedef SimpleTag<uint64_t, 11> NextHopFaceIdTag;
  */
 typedef SimpleTag<CachePolicy, 12> CachePolicyTag;
 
+typedef SimpleTag<uint64_t, 0x60000003> NumHopsTag;
+
 
 #define NDN_LP_KEEP_LOCAL_CONTROL_HEADER
 

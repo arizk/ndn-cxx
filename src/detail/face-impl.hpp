@@ -184,8 +184,14 @@ public:
       packet.add<lp::CachePolicyField>(*cachePolicyTag);
     }
 
+    shared_ptr<lp::NumHopsTag> numHopsTag = data->getTag<lp::NumHopsTag>();
+    if (numHopsTag != nullptr) {
+      packet.add<lp::NumHopsField>(*numHopsTag);
+    }
+
     packet.add<lp::FragmentField>(std::make_pair(data->wireEncode().begin(),
                                                  data->wireEncode().end()));
+
 
     m_face.m_transport->send(packet.wireEncode());
   }
