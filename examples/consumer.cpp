@@ -54,6 +54,14 @@ private:
   void
   onData(const Interest& interest, const Data& data)
   {
+    auto numHopsTag = data.getTag<ndn::lp::NumHopsTag>();
+    if (numHopsTag != nullptr) {
+        auto numHops = numHopsTag->get();
+        std::cout << "Num hops: " << numHops << std::endl;
+    }
+    else {
+      std::cout << "No numHops tag" << std::endl;
+    }
     std::cout << data << std::endl;
   }
 

@@ -188,6 +188,9 @@ public:
     if (numHopsTag != nullptr) {
       packet.add<lp::NumHopsField>(*numHopsTag);
     }
+    else {
+      packet.add<lp::NumHopsField>(0);
+    }
 
     packet.add<lp::FragmentField>(std::make_pair(data->wireEncode().begin(),
                                                  data->wireEncode().end()));
